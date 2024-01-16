@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<div class="packages">
+	<svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+		<defs>
+			<mask id="progress">
+				<rect height="100%" width="100%" fill="#000" />
+				<path class="maskLine" d="M 0 2 h 38" stroke="#fff" stroke-width="4.5" stroke-linecap="round" />
+				<path class="maskLine" d="M 0 5 h 38.5" stroke="#fff" stroke-width="4.5" stroke-linecap="round" />
+				<path class="maskLine" d="M 0 8 h 38" stroke="#fff" stroke-width="4.5" stroke-linecap="round" />
+			</mask>
+		</defs>
+		<path d="M 5 5 h 90" stroke="#ccc" stroke-width="4" />
+		<circle cx="5" cy="5" r="5" fill="#ccc" />
+		<circle cx="35" cy="5" r="5" fill="#ccc" />
+		<circle cx="64" cy="5" r="5" fill="#ccc" />
+		<circle cx="95" cy="5" r="5" fill="#ccc" />
+		<g mask="url(#progress)">
+			<path d="M 5 5 h 90" stroke="#1196ab" stroke-width="4" stroke-linecap="round" />
+			<circle cx="5" cy="5" r="5" fill="#1196ab" />
+			<circle cx="35" cy="5" r="5" fill="#1196ab" />
+			<circle cx="64" cy="5" r="5" fill="#1196ab" />
+			<circle cx="95" cy="5" r="5" fill="#1196ab" />
+			<!--checks-->
+			<path d="M 3 5.5 l 1.5 1.5 l 3 -3.5 M 33 5.5 l 1.5 1.5 l 3 -3.5 M 62 5.5 l 1.5 1.5 l 3 -3.5 M 93 5.5 l 1.5 1.5 l 3 -3.5" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+		</g>
+	</svg>
+
+	<div style="display: none">
+		<span id="scaleSliderVal">50</span>
+		<input type="range" id="scaleSlider" min="0" max="100" step="1" value="50">
+	</div>
+	<div class="container">
+		<button onclick="setProgress(9)">Ordered</button>
+		<button onclick="setProgress(39)">Shipped</button>
+		<button onclick="setProgress(68)">Out for Delivery</button>
+		<button onclick="setProgress(100)">Delivered</button>
+	</div>
+</div>
+	<script src="./index.js"></script>
+</body>
+</html>
